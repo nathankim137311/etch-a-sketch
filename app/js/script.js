@@ -1,22 +1,45 @@
+console.log('hello everybody');
+
 // variables 
-
 const containerDiv = document.getElementById('container');
-let gridCell = document.getElementById('grid-cell');
+const gridArr = [];
 let grid = createGrid(16, 16); 
-
-function createGrid (rows, columns) {
-  for (let c = 0; c <= columns; c++) {
-  let r = 1; 
-  while (r < rows) {
-    let cloneCell = gridCell.cloneNode();
-    containerDiv.appendChild(cloneCell);  
-    r++; 
-  }
-}
-}
-
 
 // event listeners 
 
-
 // functions 
+function createGrid (rows, columns) {
+  let i = 0;
+  while (i < rows * columns) {
+    let gridCell = containerDiv.appendChild(document.createElement('div'));  
+    gridArr.push(gridCell); 
+    i++; 
+  }
+  return
+}
+
+for (let i = 0; i < gridArr.length; i++) {
+  gridArr[i].addEventListener('mouseenter', () => {
+    gridArr[i].classList.add('tile'); 
+  }); 
+}
+
+function removeTransition (e) {
+  if (e.propertyName !== 'transform') return; 
+  this.classList.remove('tile'); 
+}
+
+gridArr.forEach(cell => cell.addEventListener('transitionend', removeTransition)); 
+
+
+
+
+//function tilesBlack () {
+//  for (let i = 0; i < gridArr.length; i++) {
+//    gridArr[i].addEventListener('mouseender', (e) => {
+//      e.target.style.color = 'black';
+//    }); 
+//  }
+//}
+
+

@@ -22,7 +22,6 @@ body {
 }
 
 #container {
-  margin-top: 100px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -34,17 +33,26 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (35px)[16];
-      grid-template-columns: repeat(16, 35px);
-  -ms-grid-rows: (35px)[16];
-      grid-template-rows: repeat(16, 35px);
+  -ms-grid-columns: (32px)[16];
+      grid-template-columns: repeat(16, 32px);
+  -ms-grid-rows: (32px)[16];
+      grid-template-rows: repeat(16, 32px);
 }
 
-#grid-cell {
+#container div {
   background-color: white;
-  border: 2px solid yellow;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
   width: 30px;
   height: 30px;
   margin: 0px;
+}
+
+.tile {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border-color: red;
+  -webkit-box-shadow: 0 0 10px red;
+          box-shadow: 0 0 10px red;
 }
 /*# sourceMappingURL=style.css.map */
