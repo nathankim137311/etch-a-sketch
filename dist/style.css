@@ -41,8 +41,8 @@ body {
 
 #container div {
   background-color: white;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   width: 30px;
   height: 30px;
   margin: 0px;
@@ -51,8 +51,5 @@ body {
 .tile {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  border-color: red;
-  -webkit-box-shadow: 0 0 10px red;
-          box-shadow: 0 0 10px red;
 }
 /*# sourceMappingURL=style.css.map */

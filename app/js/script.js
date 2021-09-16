@@ -9,7 +9,7 @@ let grid = createGrid(16, 16);
 
 // functions 
 function createGrid (rows, columns) {
-  let i = 0;
+  let i = 1;
   while (i < rows * columns) {
     let gridCell = containerDiv.appendChild(document.createElement('div'));  
     gridArr.push(gridCell); 
@@ -21,12 +21,14 @@ function createGrid (rows, columns) {
 for (let i = 0; i < gridArr.length; i++) {
   gridArr[i].addEventListener('mouseenter', () => {
     gridArr[i].classList.add('tile'); 
+    gridArr[i].style.backgroundColor = 'black'; 
   }); 
 }
 
 function removeTransition (e) {
   if (e.propertyName !== 'transform') return; 
   this.classList.remove('tile'); 
+  this.style.backgroundColor = 'white'; 
 }
 
 gridArr.forEach(cell => cell.addEventListener('transitionend', removeTransition)); 

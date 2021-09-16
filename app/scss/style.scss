@@ -9,7 +9,7 @@
   grid-template-rows: repeat(16, 32px);
   div {
     background-color: white;
-    transition: all 0.4s;
+    transition: all 0.5s;
     width: 30px;
     height: 30px;
     margin: 0px;
@@ -18,6 +18,4 @@
 
 .tile {
   transform: scale(1.1);
-  border-color: red;
-  box-shadow: 0 0 10px red;
 }
