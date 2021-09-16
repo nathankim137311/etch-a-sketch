@@ -33,13 +33,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (32px)[16];
-      grid-template-columns: repeat(16, 32px);
-  -ms-grid-rows: (32px)[16];
-      grid-template-rows: repeat(16, 32px);
 }
 
-#container div {
+#container .grid {
   background-color: white;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;

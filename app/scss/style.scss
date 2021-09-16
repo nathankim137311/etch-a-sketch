@@ -5,9 +5,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(16, 32px);
-  grid-template-rows: repeat(16, 32px);
-  div {
+  .grid {
     background-color: white;
     transition: all 0.5s;
     width: 30px;
