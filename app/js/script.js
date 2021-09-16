@@ -4,6 +4,7 @@ console.log('hello everybody');
 const resetBtn = document.getElementById('reset'); 
 const containerDiv = document.getElementById('container');
 const grid = document.getElementsByClassName('grid'); 
+let nodes = containerDiv.childNodes; 
 
 // event listeners 
 resetBtn.addEventListener('click', () => {
@@ -11,14 +12,25 @@ resetBtn.addEventListener('click', () => {
   let squares = parseInt(gridDimensions); 
   if (gridDimensions === '' || gridDimensions === null || gridDimensions == 0) {
     alert('ERROR'); 
-  } else {
-    clearGrid(); 
+  } else if (0 < squares && squares < 100) {
+    clearGrid(containerDiv);
     createGrid(squares); 
+  } else {
+    alert('that\'s way too many, try again'); 
   }
 });
 
 // functions 
+const clearGrid = (parent) => {
+  while(parent.firstChild) {
+    parent.removeChild(parent.firstChild); 
+  }
+}
+
 function createGrid (squares) {
+  let gridTemplateColumns = 'repeat('+squares+', auto)'
+  containerDiv.style.gridTemplateColumns = gridTemplateColumns; 
+  containerDiv.style.gridTemplateRows = gridTemplateColumns; 
   let i = 1;
   while (i <= Math.pow(squares, 2)) {
     let square = containerDiv.appendChild(document.createElement('div'));
@@ -33,13 +45,6 @@ function createGrid (squares) {
   }
 }
 
-//createGrid(16); 
-//console.log(grid.length); 
-
-const clearGrid = (array) => array.forEach(div => div.remove()); 
-
-clearGrid(document.getElementsByClassName('grid')); 
-
 function random(min,max) {
   const num = Math.floor(Math.random()*(max-min)) + min;
   return num;
@@ -49,18 +54,7 @@ function randomColor() {
   return 'rgb(' + random(0,255) + ', ' + random(0,255) + ', ' + random(0,255) +  ')';
 }
  
-//for (let i = 0; i < gridArr.length; i++) {
-//  gridArr[i].addEventListener('mouseenter', () => {
-//    gridArr[i].classList.add('tile'); 
-//    gridArr[i].style.backgroundColor = 'black'; 
-//  }); 
-//}
-
-//function removeTransition (e) {
-//  if (e.propertyName !== 'transform') return; 
-//  this.classList.remove('tile'); 
-//  this.style.backgroundColor = 'white'; 
-//}
+createGrid(5); 
 
 
 
