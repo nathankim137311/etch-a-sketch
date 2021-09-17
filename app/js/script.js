@@ -28,7 +28,7 @@ const clearGrid = (parent) => {
 }
 
 function createGrid (squares) {
-  let gridTemplateColumns = 'repeat('+squares+', auto)'
+  let gridTemplateColumns = 'repeat('+squares+', 1fr)'
   containerDiv.style.gridTemplateColumns = gridTemplateColumns; 
   containerDiv.style.gridTemplateRows = gridTemplateColumns; 
   let i = 1;
@@ -38,8 +38,7 @@ function createGrid (squares) {
     i++; 
   }
   for (let i = 0; i < grid.length; i++) {
-    grid[i].addEventListener('mouseenter', () => {
-      grid[i].classList.add('tile'); 
+    grid[i].addEventListener('mouseenter', () => { 
       grid[i].style.backgroundColor = randomColor(); 
     }); 
   }
@@ -54,7 +53,7 @@ function randomColor() {
   return 'rgb(' + random(0,255) + ', ' + random(0,255) + ', ' + random(0,255) +  ')';
 }
  
-createGrid(5); 
+createGrid(16); 
 
 
 
